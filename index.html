@@ -101,7 +101,7 @@
     <script>
         let dica = 1;
         let vida = 3;
-        let textoTeste = "<img class='padrao' src='https://www.pontotel.com.br/wp-content/uploads/2022/05/imagem-corporativa.jpg'>"
+        let textoTeste = "<img class='padrao' src='https://www.pontotel.com.br/wp-content/uploads/2022/05/imagem-corporativa.jpg'><br>Vida: " + vida;
 
         function fechaModal() {
             var alert1 = document.getElementById('alert')
@@ -122,6 +122,7 @@
 
         for(let i = 12; i < 72; i++) {
             document.getElementById("img" + i).addEventListener("targetFound", evet => {
+                alert("Você perdeu uma vida!")
                 reduzVida();
             })
         }
