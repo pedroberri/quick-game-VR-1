@@ -159,7 +159,7 @@
 
         document.getElementById("img2").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 3) {
-                textoNovo = "<img src='./dica4.png' alt='''>";
+                textoNovo = "<img class='padrao' src='./dica4.png' alt=''>";
                 localStorage.setItem("dica", 4);
                 abriModal()
             } else {
@@ -168,6 +168,7 @@
         })
 
         document.getElementById("img3").addEventListener("targetFound", event => {
+            alert("touro")
             if (localStorage.getItem("dica") == 4) {
                 textoTeste = "<img class='padrao' src='./dica5.png' alt=''>";
                 localStorage.setItem("dica", 5);
@@ -178,6 +179,7 @@
         })
 
         document.getElementById("img4").addEventListener("targetFound", event => {
+            alert("menino")
             if (localStorage.getItem("dica") == 5) {
                 textoTeste = "<img class='padrao' src='./dica6.1.png' alt=''>";
                 localStorage.setItem("dica", 6);
