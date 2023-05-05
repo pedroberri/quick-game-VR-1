@@ -137,18 +137,20 @@
         function reduzVida() {
             alert("Você perdeu uma vida!")
             localStorage.setItem("vida", (localStorage.getItem("vida") - 1));
-            if(localStorage.getItem("vida") <= 3) {
+            if(localStorage.getItem("vida") <= 0) {
                 alert("Você perdeu!")
             }
         }
 
         for(let i = 12; i < 72; i++) {
             document.getElementById("img" + i).addEventListener("targetFound", event => {
+                alert("Target: " + i)
                 reduzVida();
             })
         }
 
         document.getElementById("img0").addEventListener("targetFound", event => {
+            alert("TargetCerto")
             if (localStorage.getItem("dica") === 1) {
                 textoNovo = "<img src='./dica2.png' alt='''>";
                 localStorage.setItem("dica", 2);
