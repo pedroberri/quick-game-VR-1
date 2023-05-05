@@ -106,22 +106,7 @@
             localStorage.setItem("vida", 3);
         }
         let textoNovo = "<div class='padrao'>Bem-vindo ao enigma do milênio! Neste jogo você deve escanear imagens que são as respostas das charadas e/ou enigmas que serão propostos. A cada imagem escaneada errada, você perde uma vida! Tome cuidado para não ficar sem, você conta com 3 ao máximo. Tenha um bom jogo! <br>Charada: eu ilumino tudo ao meu redor, mas sem eletricidade eu sou só um objeto decorativo. O que sou eu?</div>";
-        // AUDIO ------------------------------------------
-        // const player = document.getElementById("player");
-        // const playButton = document.getElementById("play-button");
-        // playButton.addEventListener("click", () => {
-        //   if (player.paused) {
-        //     player.play();
-        //     playButton.textContent = "Pause";
-        //   } else {
-        //     player.pause();
-        //     playButton.textContent = "Play";
-        //   }
-        // });
-        // player.addEventListener("ended", () => {
-        //   playButton.textContent = "Play";
-        // });
-        //------------------------------------------
+
         function fechaModal() {
             var alert1 = document.getElementById('alert')
             alert1.style.opacity = '0';
@@ -174,7 +159,7 @@
 
         document.getElementById("img2").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 3) {
-                textoNovo = "<img class='padrao' src='./dica4.png' alt=''>";
+                textoNovo = "<img src='./dica4.png' alt='''>";
                 localStorage.setItem("dica", 4);
                 abriModal()
             } else {
