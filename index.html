@@ -105,8 +105,10 @@
         if (!localStorage.getItem("vida")) {
             localStorage.setItem("vida", 3);
         }
-        let textoNovo = "<div class='padrao'>Bem-vindo ao enigma do milênio! Neste jogo você deve escanear imagens que são as respostas das charadas e/ou enigmas que serão propostos. A cada imagem escaneada errada, você perde uma vida! Tome cuidado para não ficar sem, você conta com 3 ao máximo. Tenha um bom jogo! <br>Charada: eu ilumino tudo ao meu redor, mas sem eletricidade eu sou só um objeto decorativo. O que sou eu?</div>";
-
+        if (!localStorage.getItem("dicaString")) {
+            localStorage.setItem("dicaString", "<div class='padrao'>Bem-vindo ao enigma do milênio! Neste jogo você deve escanear imagens que são as respostas das charadas e/ou enigmas que serão propostos. A cada imagem escaneada errada, você perde uma vida! Tome cuidado para não ficar sem, você conta com 3 ao máximo. Tenha um bom jogo! <br>Charada: eu ilumino tudo ao meu redor, mas sem eletricidade eu sou só um objeto decorativo. O que sou eu?</div>");
+        }
+        
         function fechaModal() {
             var alert1 = document.getElementById('alert')
             alert1.style.opacity = '0';
@@ -115,7 +117,7 @@
         function abriModal() {
             var alert1 = document.getElementById('alert')
             alert1.style.opacity = '1'
-            var texto = textoNovo;
+            var texto = localStorage.getItem("dicaString");
             alert1.innerHTML = "<div style='position: absolute; z-index:20; right:4px'><span class='closebtn' onclick='fechaModal()'>&times;</span></div>" + texto + "<br>Vida: " + localStorage.getItem("vida");
         }
 
@@ -126,7 +128,7 @@
                 alert("Você perdeu!")
                 localStorage.setItem("dica", 1)
                 localStorage.setItem("vida", 3)
-                textoNovo = "<div class='padrao'>Bem-vindo ao enigma do milênio! Neste jogo você deve escanear imagens que são as respostas das charadas e/ou enigmas que serão propostos. A cada imagem escaneada errada, você perde uma vida! Tome cuidado para não ficar sem, você conta com 3 ao máximo. Tenha um bom jogo! <br>Charada: eu ilumino tudo ao meu redor, mas sem eletricidade eu sou só um objeto decorativo. O que sou eu?</div>";
+                localStorage.setItem("dicaString", "<div class='padrao'>Bem-vindo ao enigma do milênio! Neste jogo você deve escanear imagens que são as respostas das charadas e/ou enigmas que serão propostos. A cada imagem escaneada errada, você perde uma vida! Tome cuidado para não ficar sem, você conta com 3 ao máximo. Tenha um bom jogo! <br>Charada: eu ilumino tudo ao meu redor, mas sem eletricidade eu sou só um objeto decorativo. O que sou eu?</div>");
                 abriModal();
             }
         }
@@ -139,7 +141,7 @@
 
         document.getElementById("img0").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 1) {
-                textoNovo = "<img src='./dica2.png' alt='''>";
+                localStorage.setItem("dicaString", "<img src='./dica2.png' alt='''>");
                 localStorage.setItem("dica", 2);
                 abriModal()
             } else {
@@ -149,7 +151,7 @@
 
         document.getElementById("img1").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 2) {
-                textoNovo = "<audio id='player' controls><source src='mp-645433ecabc8b.mp3' type='audio/mp3'></audio>";
+                localStorage.setItem("dicaString", "<audio id='player' controls><source src='mp-645433ecabc8b.mp3' type='audio/mp3'></audio>");
                 localStorage.setItem("dica", 3);
                 abriModal()
             } else {
@@ -159,7 +161,7 @@
 
         document.getElementById("img2").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 3) {
-                textoNovo = "<img class='padrao' src='./dica4.png' alt=''>";
+                localStorage.setItem("dicaString", "<img class='padrao' src='./dica4.png' alt=''>");
                 localStorage.setItem("dica", 4);
                 abriModal()
             } else {
@@ -170,7 +172,7 @@
         document.getElementById("img3").addEventListener("targetFound", event => {
             alert("touro")
             if (localStorage.getItem("dica") == 4) {
-                textoNovo = "<img class='padrao' src='./dica5.png' alt=''>";
+                localStorage.setItem("dicaString", "<img class='padrao' src='./dica5.png' alt=''>");
                 localStorage.setItem("dica", 5);
                 abriModal()
             } else {
@@ -181,7 +183,7 @@
         document.getElementById("img4").addEventListener("targetFound", event => {
             alert("menino")
             if (localStorage.getItem("dica") == 5) {
-                textoNovo = "<img class='padrao' src='./dica6.1.png' alt=''>";
+                localStorage.setItem("dicaString", "<img class='padrao' src='./dica6.1.png' alt=''>");
                 localStorage.setItem("dica", 6);
                 abriModal()
             } else {
@@ -191,7 +193,7 @@
 
         document.getElementById("img5").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 6) {
-                textoNovo = "<img class='padrao' src='./dica6.2.png' alt=''>";
+                localStorage.setItem("dicaString","<img class='padrao' src='./dica6.2.png' alt=''>");
                 localStorage.setItem("dica", 7);
                 abriModal()
             } else {
@@ -201,7 +203,7 @@
 
         document.getElementById("img6").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 7) {
-                textoNovo = "<img class='padrao' src='./dica6.3.png' alt=''>";
+                localStorage.setItem("dicaString", "<img class='padrao' src='./dica6.3.png' alt=''>");
                 localStorage.setItem("dica", 8);
                 abriModal()
             } else {
@@ -211,7 +213,7 @@
 
         document.getElementById("img7").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 8) {
-                textoNovo = "<img class='padrao' src='./dica6.4.png' alt=''>";
+                localStorage.setItem("dicaString", "<img class='padrao' src='./dica6.4.png' alt=''>");
                 localStorage.setItem("dica", 9);
                 abriModal()
             } else {
@@ -221,7 +223,7 @@
 
         document.getElementById("img8").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 9) {
-                textoNovo = "<img class='padrao' src='./dica6.5.png' alt=''>";
+                localStorage.setItem("dicaString", "<img class='padrao' src='./dica6.5.png' alt=''>");
                 localStorage.setItem("dica", 10);
                 abriModal()
             } else {
@@ -231,7 +233,7 @@
 
         document.getElementById("img9").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 10) {
-                textoNovo = "<img class='padrao' src='./dica6.6.png' alt=''>";
+                localStorage.setItem("dicaString", "<img class='padrao' src='./dica6.6.png' alt=''>");
                 localStorage.setItem("dica", 11);
                 abriModal()
             } else {
@@ -241,7 +243,7 @@
 
         document.getElementById("img10").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 11) {
-                textoNovo = "Charada: wqbsbcfot <br>b -> a";
+                localStorage.setItem("dicaString", "Charada: wqbsbcfot <br>b -> a");
                 abriModal()
             } else {
                 reduzVida();
