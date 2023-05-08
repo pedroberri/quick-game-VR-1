@@ -4,8 +4,8 @@
     transition-duration: 1.3s;
     position: absolute;
     padding: 20px;
-    background-color: #c0a1ae;
-    color: white;
+    background-color: #beb7a4;
+    color: #fffffc;
     font-size: 1.5rem;
     z-index: 50;
     border-radius: 4px;
@@ -15,7 +15,7 @@
 
 .closebtn {
     margin-left: 5px;
-    color: black;
+    color: #fffffc;
     font-weight: bold;
     float: right;
     font-size: 2rem;
@@ -46,13 +46,13 @@
     margin-top: 10px;
     margin-left: 25%;
     font-size: 2rem;
-    background: #505045;
-	color: white;
+    background: #000000;
+	color: #f6f7eb;
 	text-shadow: none;
 }
 
 .botaoDica:hover {
-    background-color: #727271;
+    background-color: #575757;
     transition: 0.3s;
 }
 
@@ -76,11 +76,6 @@
     width: 90%;
     height: 50%;
     margin: 0px 10px;
-}
-
-img {
-    transform: rotate(90deg);
-    transform-origin: left top 0;
 }
 
 
