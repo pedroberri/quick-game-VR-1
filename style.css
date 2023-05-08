@@ -72,9 +72,16 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
   
-  #audio-container audio {
+#audio-container audio {
     width: 90%;
     height: 50%;
     margin: 0px 10px;
-  }
+}
+
+img {
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+}
+
+
 

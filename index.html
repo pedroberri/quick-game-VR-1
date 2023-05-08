@@ -170,7 +170,6 @@
         })
 
         document.getElementById("img3").addEventListener("targetFound", event => {
-            alert("touro")
             if (localStorage.getItem("dica") == 4) {
                 localStorage.setItem("dicaString", "<img class='padrao' src='./dica5.png' alt=''>");
                 localStorage.setItem("dica", 5);
@@ -181,7 +180,6 @@
         })
 
         document.getElementById("img4").addEventListener("targetFound", event => {
-            alert("menino")
             if (localStorage.getItem("dica") == 5) {
                 localStorage.setItem("dicaString", "<img class='padrao' src='./dica6.1.png' alt=''>");
                 localStorage.setItem("dica", 6);
@@ -244,6 +242,16 @@
         document.getElementById("img10").addEventListener("targetFound", event => {
             if (localStorage.getItem("dica") == 11) {
                 localStorage.setItem("dicaString", "Charada: wqbsbcfot <br>b -> a");
+                localStorage.setItem("dica", 12);
+                abriModal()
+            } else {
+                reduzVida();
+            }
+        })
+
+        document.getElementById("img10").addEventListener("targetFound", event => {
+            if (localStorage.getItem("dica") == 12) {
+                localStorage.setItem("dicaString", "VOCÊ GANHOU!");
                 abriModal()
             } else {
                 reduzVida();
