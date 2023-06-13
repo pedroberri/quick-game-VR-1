@@ -13,7 +13,7 @@
 
 <body>
     <!-- Modal -->
-    <button onclick="abriModal()" class="botaoDica">Dica</button>
+    <button onclick="fechaModal()" class="botaoDica">Dica</button>
     <br><br>
     <div class="div-alert" style="z-index: 20;">
         <div class="alert" id="alert"></div>
@@ -99,13 +99,13 @@
     </a-scene>
 
     <script>
-        if (!localStorage.getItem("dica")) {
+        if (localStorage.getItem("dica")) {
             localStorage.setItem("dica", 1);
         }
-        if (!localStorage.getItem("vida")) {
+        if (localStorage.getItem("vida")) {
             localStorage.setItem("vida", 3);
         }
-        if (!localStorage.getItem("dicaString")) {
+        if (localStorage.getItem("dicaString")) {
             localStorage.setItem("dicaString", "<div class='padrao'>Bem-vindo ao enigma do milênio! Neste jogo você deve escanear imagens que são as respostas das charadas e/ou enigmas que serão propostos. A cada imagem escaneada errada, você perde uma vida! Você conta com 3 ao máximo. Tenha um bom jogo! <br>Charada: eu ilumino tudo ao meu redor, mas sem eletricidade eu sou só um objeto decorativo. O que sou eu?</div>");
         }
         
@@ -131,12 +131,6 @@
                 localStorage.setItem("dicaString", "<div class='padrao'>Bem-vindo ao enigma do milênio! Neste jogo você deve escanear imagens que são as respostas das charadas e/ou enigmas que serão propostos. A cada imagem escaneada errada, você perde uma vida! Tome cuidado para não ficar sem, você conta com 3 ao máximo. Tenha um bom jogo! <br>Charada: eu ilumino tudo ao meu redor, mas sem eletricidade eu sou só um objeto decorativo. O que sou eu?</div>");
                 abriModal();
             }
-        }
-
-        for(let i = 12; i < 72; i++) {
-            document.getElementById("img" + i).addEventListener("targetFound", event => {
-                reduzVida();
-            })
         }
 
         document.getElementById("img0").addEventListener("targetFound", event => {
@@ -257,6 +251,12 @@
                 reduzVida();
             }
         })
+
+        for(let i = 0; i < 72; i++) {
+            document.getElementById("img" + i).addEventListener("targetFound", event => {
+                reduzVida();
+            })
+        }
     </script>
 </body>
 
